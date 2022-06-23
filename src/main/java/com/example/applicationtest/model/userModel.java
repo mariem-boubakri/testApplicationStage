@@ -10,11 +10,14 @@ import java.util.Date;
 public abstract class userModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
+
     private Long id;
     private String FirstName;
     private String LastName;
     //private String requester;
     private String Email;
+    private String status;
     private String password;
 
     public Long getId() {
@@ -23,6 +26,10 @@ public abstract class userModel {
 
     public String getFirstName() {
         return FirstName;
+    }
+
+    public String getStatus() {
+        return status;
     }
 
     public String getLastName() {
@@ -48,6 +55,11 @@ public abstract class userModel {
     public void setEmail(String email) {
         Email = email;
     }
+
+    public void setStatus(String stat) {
+        status = stat;
+    }
+
 
     public void setPassword(String password) {
         this.password = password;
